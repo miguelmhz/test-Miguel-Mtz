@@ -6,7 +6,7 @@ import Modal from './Modal';
 
 export const Details = () => {
   const {emailSelected, setDeleteEmail, setSpamEmail, setUnread, activeSidebar} =useEmailStore();
-  const {file, name}= emailSelected.attachements[0]
+  //const {file, name}= emailSelected.attachements[0]
   
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -58,7 +58,10 @@ export const Details = () => {
         </div>
       </main>
       <Modal isOpen={modalOpen} onClose={closeModal}>
-        <img src={file} alt={name} />
+
+        <img 
+        src={emailSelected && emailSelected.attachements[0] && emailSelected.attachements[0].file} 
+        alt={emailSelected && emailSelected.attachements[0] && emailSelected.attachements[0].name} />
       </Modal>
         </>
         
