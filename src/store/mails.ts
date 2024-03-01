@@ -20,7 +20,11 @@ type Store = {
     setFilterBy: (value: 'all' | 'spam' | 'deleted'| undefined) => void
 }
 
-const API_URL = 'http://localhost:3000/';
+const isLocalhost = window.location.hostname === 'localhost';
+const API_URL = isLocalhost ?   
+    'http://localhost:3000/' 
+    :'https://test-miguel-mtz.vercel.app/'
+
 
 export const useEmailStore = create<Store>()(persist((set, get) => {
     return {
