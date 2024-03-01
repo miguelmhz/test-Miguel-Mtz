@@ -1,0 +1,54 @@
+@import 'variables';
+
+.mail-card{
+    cursor: pointer;
+    display: flex;
+    border-left: 5px #00b3ec solid;
+    background-color: $background-color;
+    padding: 1rem 1.3rem;
+    justify-content: space-between;
+    align-items: stretch;
+    border-bottom: 1px solid $border-bottom-color;
+    &.read{
+        transition: all ease .3s;
+        border-color: white;
+        background-color:white ;
+        .body h2{
+            color: $font-dark-color;
+        }
+    }
+    &.selected{
+        transition: all ease .3s;
+        border-color: white;
+        background-color: rgb(242 242 242);
+        
+        .body h2{
+            color: $font-dark-color;
+            font-weight: 600;
+        }
+    }
+
+    
+
+    .body{
+        h2{
+            margin: 0;
+            color: $primary-color;
+            font-size: larger;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        p{
+            color: $font-color;
+            margin: 0;
+        }
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        color: $font-color;
+    }
+
+}
